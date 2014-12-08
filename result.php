@@ -46,8 +46,8 @@ $result = $client->putObject(array(
 ));
 
 $url= $result['ObjectURL'];
-echo $_SESSION['email'];
-echo $_SESSION['phone']; 
+echo $_SESSION['email'] .PHP_EOL;
+echo $_SESSION['phone'] .PHP_EOL; 
 
 //hace lo de img blabla con un simple echo $url y luego 
 
