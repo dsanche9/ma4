@@ -14,10 +14,6 @@ Enter Phone of user (1-XXX-XXX-XXXX): <input type="phone" name="phone">
 <input type="submit" value="Send File" />
 </form>
 <hr />
-<!-- The data encoding type, enctype, MUST be specified as below -->
-<form enctype="multipart/form-data" action="gallery.php" method="POST">
-Enter Email of user for gallery to browse: <input type="email" name="email">
-<input type="submit" value="Load Gallery" />
 </form>
 </body>
 </html>
