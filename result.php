@@ -3,6 +3,7 @@
 //result.php
 $_SESSION['email']=$_POST['email'];
 $_SESSION['phone']=$_POST['phone'];
+
 $uploaddir = '/var/www/html/'; //maybe leave it on www.
 $uploadfile = $uploaddir.basename($_FILES['userfile']['name']);
 echo '<pre>';
@@ -42,14 +43,15 @@ $result = $client->putObject(array(
 ));
 
 $url= $result['ObjectURL'];
+echo $_SESSION['email'];
+echo $_SESSION['phone']; 
 
 //hace lo de img blabla con un simple echo $url y luego 
 
 ?>
 
 <img src="<?php echo $url; ?>" alt="Picture">
-<?php echo $_SESSION['email']; ?>
-<?php echo $_SESSION['phone']; ?>
+
 
 
 
