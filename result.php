@@ -7,7 +7,7 @@
 $_SESSION['email']=$_POST['email'];
 $_SESSION['phone']=$_POST['phone'];
 
-$uploaddir = '/var/www/html/'; //maybe leave it on www.
+$uploaddir = ''; //maybe leave it on www.
 $uploadfile = $uploaddir.basename($_FILES['userfile']['name']);
 echo '<pre>';
 if(move_uploaded_file($_FILES['userfile']['tmp_name'], $uploadfile)){
@@ -25,7 +25,7 @@ require 'vendor/autoload.php';
 use Aws\S3\S3Client;
 
 //creates a client with my key and secret?
-$client = $3Client::factory();
+$client = S3Client::factory();
 
 //create a bucket
 $bucket = uniqid("backend1", true);
