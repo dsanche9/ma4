@@ -10,7 +10,7 @@
 <!-- Name of input element determines name in $_FILES array -->
 Send this file: <input name="userfile" type="file" /><br />
 Enter Email of user: <input type="email" name="useremail"><br />
-Enter Phone of user (1-XXX-XXX-XXXX): <input type="phone" name="phone">
+Enter Phone of user (1-XXX-XXX-XXXX): <input type="phone" name="phone"><br />
 <input type="submit" value="Send File" />
 </form>
 <hr />
