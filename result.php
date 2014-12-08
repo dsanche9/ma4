@@ -3,7 +3,7 @@
 //result.php
 $uploaddir = '/var/www/html/'; //maybe leave it on www.
 $uploadfile = $uploaddir.basename($_FILES['userfile']['name']);
-echo '<pre>';
+eho '<pre>';
 if(move_uploaded_file($_FILES['userfile']['tmp_name'], $uploadfile)){
 	echo "File successfully uploaded. \n";
 } else {
