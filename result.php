@@ -23,7 +23,7 @@ use Aws\S3\S3Client;
 //creates a client with my key and secret?
 $client = S3Client::factory();
 
-//create a bucket
+//create a bucke
 $bucket = uniqid("backend1", true);
 echo "Creating bucket named {$bucket}\n";
 $result = $client->createBucket(array(
