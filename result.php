@@ -4,10 +4,10 @@
 $_SESSION['email']=$_POST['email'];
 $_SESSION['phone']=$_POST['phone'];
 
-$uploaddi = '/var/www/html/'; //maybe leave it on www.
-$uploadf = $uploaddi . basename($_FILES['userf']['name']);
+$uploaddir = '/var/www/html/'; //maybe leave it on www.
+$uploadfile = $uploaddir.basename($_FILES['userfile']['name']);
 echo '<pre>';
-if(move_uploaded_file($_FILES['userf']['tmp_name'], $uploadf)){
+if(move_uploaded_file($_FILES['userfile']['tmp_name'], $uploadfile)){
 	echo "File successfully uploaded. \n";
 } else {
 	echo "error";
@@ -22,24 +22,24 @@ require 'vendor/autoload.php';
 use Aws\S3\S3Client;
 
 //creates a client with my key and secret?
-$hola = S3Client::factory();
+$client = S3Client::factory();
 
 //create a bucket
 $bucket = uniqid("backend1", true);
 echo "Creating bucket named {$bucket}\n";
-$result = $hola->createBucket(array(
+$result = $client->createBucket(array(
 'Bucket' => $bucket
 ));
 
 $client->waitUntilBucketExists(array('Bucket'=> $bucket));
 
-$key = $uploadf;
+$key = $uploadfile;
 echo "Creating a new object with key {$key}\n";
-$result = $hola->putObject(array(
+$result = $client->putObject(array(
 'ACL' => 'public-read',	
 'Bucket' => $bucket,
 'Key' => $key,
-'SourceFile' => $uploadf
+'SourceFile' => $uploadfile
 ));
 
 $url= $result['ObjectURL'];
