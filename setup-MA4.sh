@@ -17,6 +17,7 @@ service apache2 restart 1>/tmp/01.out 2>/tmp/01.err
 mv composer.phar /var/www/html
 mv composer.json /var/www/html
 cp -r vendor /var/www/html
+rm -r vendor
 mv composer.lock /var/www/html
 mv index.php /var/www/html
 mv result.php /var/www/html
