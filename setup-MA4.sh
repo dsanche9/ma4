@@ -1,6 +1,6 @@
 #!/bin/bash
 sudo bash
-sudo chmod 777 /var/www/html/
+
 sudo apt-get -y update 1>/tmp/01.out 2>/tmp/01.err
 sudo apt-get -y upgrade 1>/tmp/01.out 2>/tmp/01.err
 sudo apt-get -y install apache2 wget php5 php5-curl curl php5-mysql git 1>/tmp/02.out 2>/tmp/02.err
@@ -16,8 +16,8 @@ service apache2 restart 1>/tmp/01.out 2>/tmp/01.err
 
 mv composer.phar /var/www/html
 mv composer.json /var/www/html
-cp -r vendor /var/www/html
-rm -r vendor
+mv vendor /var/www/html
+
 mv composer.lock /var/www/html
 mv index.php /var/www/html
 mv result.php /var/www/html
