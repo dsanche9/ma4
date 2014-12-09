@@ -1,7 +1,4 @@
-<!DOCTYPE html>
-<html>
-<title>ma4</title>
-<body>
+
 <?php
 //result.php
 $_SESSION['email']=$_POST['email'];
@@ -52,10 +49,8 @@ echo $_SESSION['phone'] .PHP_EOL;
 //hace lo de img blabla con un simple echo $url y luego 
 
 ?>
-<br>
 <img src="<?php echo $url; ?>" alt="Picture">
-</body>
-</html>
+
 
 
 
