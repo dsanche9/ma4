@@ -24,7 +24,7 @@ use Aws\S3\S3Client;
 $client = S3Client::factory();
 
 //create a bucket
-$bucket = uniqid("backend3", true);
+$bucket = uniqid("backend1", true);
 echo "Creating bucket named {$bucket}\n";
 $result = $client->createBucket(array(
 'Bucket' => $bucket
