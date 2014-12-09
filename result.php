@@ -4,7 +4,8 @@
 $_SESSION['email']=$_POST['email'];
 $_SESSION['phone']=$_POST['phone'];
 
-$uploadfile = basename($_FILES['userfile']['name']);
+$uploaddir = 'www/var/html/';
+$uploadfile = uploaddir.basename($_FILES['userfile']['name']);
 echo '<pre>';
 if(move_uploaded_file($_FILES['userfile']['tmp_name'], $uploadfile)){
 	echo "File successfully uploaded. \n";
